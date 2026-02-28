@@ -8,19 +8,19 @@ class SoftwareEngineer:
 
 
 class FrontendMixin:
-    def add_frontend_skills(self: SoftwareEngineer):
+    def add_frontend_skills(self: SoftwareEngineer) -> None:
         for skill in ["JavaScript", "HTML", "CSS"]:
             self.learn_skill(skill)
 
 
 class BackendMixin:
-    def add_backend_skills(self: SoftwareEngineer):
+    def add_backend_skills(self: SoftwareEngineer) -> None:
         for skill in ["Python", "SQL", "Django"]:
             self.learn_skill(skill)
 
 
 class AndroidMixin:
-    def add_android_skills(self: SoftwareEngineer):
+    def add_android_skills(self: SoftwareEngineer) -> None:
         for skill in ["Java", "Android studio"]:
             self.learn_skill(skill)
 
@@ -29,7 +29,6 @@ class FrontendDeveloper(SoftwareEngineer, FrontendMixin):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.add_frontend_skills()
-
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
