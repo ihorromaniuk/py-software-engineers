@@ -9,20 +9,17 @@ class SoftwareEngineer:
 
 class FrontendMixin:
     def add_frontend_skills(self: SoftwareEngineer) -> None:
-        for skill in ["JavaScript", "HTML", "CSS"]:
-            self.learn_skill(skill)
+        self.skills += ["JavaScript", "HTML", "CSS"]
 
 
 class BackendMixin:
     def add_backend_skills(self: SoftwareEngineer) -> None:
-        for skill in ["Python", "SQL", "Django"]:
-            self.learn_skill(skill)
+        self.skills += ["Python", "SQL", "Django"]
 
 
 class AndroidMixin:
     def add_android_skills(self: SoftwareEngineer) -> None:
-        for skill in ["Java", "Android studio"]:
-            self.learn_skill(skill)
+        self.skills += ["Java", "Android studio"]
 
 
 class FrontendDeveloper(SoftwareEngineer, FrontendMixin):
@@ -55,7 +52,7 @@ class AndroidDeveloper(SoftwareEngineer, AndroidMixin):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
